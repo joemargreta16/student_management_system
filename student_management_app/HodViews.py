@@ -13,7 +13,7 @@ from student_management_app.models import CustomUser, Staffs, Courses, Subjects,
 
 
 def admin_home(request):
-    student_count = Students.objects.all().count()
+    student_count1 = Students.objects.all().count()
     staff_count = Staffs.objects.all().count()
     subject_count = Subjects.objects.all().count()
     course_count = Courses.objects.all().count()
@@ -35,9 +35,9 @@ def admin_home(request):
     student_count_list_in_subject = []
     for subject in subjects_all:
         course = Courses.objects.get(id=subject.course_id.id)
-        student_count = Students.objects.filter(course_id=course.id).count()
+        student_counts = Students.objects.filter(course_id=course.id).count()
         subject_list.append(subject.subject_name)
-        student_count_list_in_subject.append(student_count)
+        student_count_list_in_subject.append(student_counts)
 
     staffs = Staffs.objects.all()
     attendance_present_list_staff = []
@@ -64,7 +64,7 @@ def admin_home(request):
         student_name_list.append(student.admin.username)
 
     return render(request, "hod_template/home_content.html",
-                  {"student_count": student_count, "staff_count": staff_count, "subject_count": subject_count,
+                  {"student_count": student_count1, "staff_count": staff_count, "subject_count": subject_count,
                    "course_count": course_count, "course_name_list": course_name_list,
                    "subject_count_list": subject_count_list,
                    "student_count_list_in_course": student_count_list_in_course,
