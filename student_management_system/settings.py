@@ -148,7 +148,7 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_mails")
 # DEFAULT_FROM_EMAIL = 'Student Management System <joemar.greta16@gmail.com>'
 # fail_silently = False
 # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 import dj_database_url
 
 prod_db = dj_database_url.config(conn_max_age=500)
