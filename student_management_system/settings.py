@@ -25,6 +25,7 @@ SECRET_KEY = '=xe921l()%oztmssxdl5$@&x8=bfx8+)d@9wt$5414225jafzo'
 DEBUG = True
 
 ALLOWED_HOSTS = ["student-mngmt-sys-by-jtgreta.herokuapp.com"]
+# ALLOWED_HOSTS = ["*"]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # Enable this area only if making the project live on HEROKU
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -138,16 +140,14 @@ AUTHENTICATION_BACKENDS = ['student_management_app.EmailBackEnd.EmailBackEnd']
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_mails")
 
-# SENDGRID_API_KEY = os.getenv('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')
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIl_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False
-# EMAIL_HOST_USER = 'joemar.greta16@gmail.com'
-# EMAIL_HOST_PASSWORD = 'strongpossum2020'
-# DEFAULT_FROM_EMAIL = 'Student Management System <joemar.greta16@gmail.com>'
-# fail_silently = False
-# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# EMAIL_HOST="smtp.gmail.com"
+# EMAIl_PORT=587
+# EMAIL_HOST_USER="joemar.greta16@gmail.com"
+# EMAIL_HOST_PASSWORD="strongpossum2020"
+# EMAIL_USE_TLS=True
+# DEFAULT_FROM_EMAIL="Student Management System <joemar.greta16@gmail.com>"
+
+# Enable this area only if making the project live on HEROKU
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 import dj_database_url
 import django_heroku

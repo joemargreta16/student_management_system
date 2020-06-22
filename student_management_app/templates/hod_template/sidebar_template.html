@@ -176,6 +176,26 @@
               </p>
           </a>
         </li><!-- Staff Leave -->
+
+        <li class="nav-item">
+            {% url 'admin_send_notification_staff' as admin_send_notification_staff %}
+          <a href="{{ admin_send_notification_staff }}" class="nav-link {% if request.path == admin_send_notification_staff %} active {% endif %}">
+            <i class="nav-icon fas fa-th"></i>
+              <p>
+                Send Staff Notification
+              </p>
+          </a>
+        </li><!-- Send Staff Notification  -->
+
+        <li class="nav-item">
+            {% url 'admin_send_notification_student' as admin_send_notification_student %}
+          <a href="{{ admin_send_notification_student }}" class="nav-link {% if request.path == admin_send_notification_student %} active {% endif %}">
+            <i class="nav-icon fas fa-th"></i>
+              <p>
+                Send Student Notification
+              </p>
+          </a>
+        </li><!-- Send Student Notification  -->
       </ul>
     </nav>
       <!-- /.sidebar-menu -->

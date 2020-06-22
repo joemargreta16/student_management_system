@@ -72,7 +72,15 @@
               </p>
             </a>
           </li><!-- Feedback -->
-
+          <li class="nav-item">
+            {% url 'staff_all_notification' as staff_all_notification %}
+            <a href="{{ staff_all_notification }}" class="nav-link {% if request.path == staff_all_notification %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Notifications
+              </p>
+            </a>
+          </li><!-- Notifications -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
