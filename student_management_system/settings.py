@@ -24,7 +24,7 @@ SECRET_KEY = '=xe921l()%oztmssxdl5$@&x8=bfx8+)d@9wt$5414225jafzo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["student-mngmt-sys-by-jtgreta.herokuapp.com"]
+ALLOWED_HOSTS = ["mystudentmanagementsys.herokuapp.com"]
 # ALLOWED_HOSTS = ["*"]
 
 MEDIA_URL = "/media/"

@@ -7,6 +7,7 @@
       <w>endblock</w>
       <w>endfor</w>
       <w>firebase</w>
+      <w>gunicorn</w>
       <w>joemar</w>
       <w>keyup</w>
       <w>rgba</w>

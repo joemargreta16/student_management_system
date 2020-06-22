@@ -76,7 +76,7 @@ Staffs Notification
                 <input type="hidden" name="student_id" class="form-control" id="student_id">
             </div>
             <div class="form-group">
-                <button class="btn btn-info btn-block send_notification_block" type="button">Send Notification</button>
+                <button class="btn btn-info btn-block send_notification_btn" type="button">Send Notification</button>
             </div>
         </div>
         <div class="modal-footer">
@@ -100,7 +100,7 @@ Staffs Notification
       $("#name_span").text(student_name);
     });
 
-    $(".send_notification_block").click(function(){
+    $(".send_notification_btn").click(function(){
       var id=$("#student_id").val();
       var message=$("#message_not").val();
       sendNotification(id,message);
@@ -108,7 +108,7 @@ Staffs Notification
 
     function sendNotification(id,message){
     $.ajax({
-            url:'{% url 'send_student_notification' %}',
+            url:'{% url 'send_staff_notification' %}',
             type:'POST',
             data:{id:id,message:message},
         })
