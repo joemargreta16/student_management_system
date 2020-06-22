@@ -607,6 +607,7 @@ def send_staff_notification(request):
         "notification": {
             "title": "Student Management System",
             "body": message,
+
         },
         "to": token
     }
