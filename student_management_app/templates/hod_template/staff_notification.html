@@ -106,7 +106,7 @@ Staffs Notification
 
     function sendNotification(id,message){
         $.ajax({
-            url:'{% send_staff_notification %}',
+            url:'{% url 'send_staff_notification' %}',
             type:'POST',
             data:{id:id,message:message},
         })
