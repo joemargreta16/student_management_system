@@ -311,7 +311,7 @@ Home
 
   function sendToServer(token){
     $.ajax({
-        url:'{% staff_fcmtoken_save %}',
+        url:'{% 'staff_fcmtoken_save' %}',
         type:'POST',
         data:{token:token},
     })
