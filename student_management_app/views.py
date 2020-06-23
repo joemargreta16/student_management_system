@@ -52,8 +52,6 @@ def logout_user(request):
 def showFirebaseJS(request):
     data = 'importScripts("https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js");' \
            'importScripts("https://www.gstatic.com/firebasejs/7.14.6/firebase-messaging.js");' \
- \
- \
            'var firebaseConfig = {' \
            'apiKey: "AIzaSyByJtFBZvXE1gv35I1qPctEnZ1oNI64QYE",' \
            'authDomain: "student-management-syste-bdbe2.firebaseapp.com",' \
@@ -64,10 +62,8 @@ def showFirebaseJS(request):
            'appId: "1:1031958236957:web:e5b07faf9473bc9707dbf4",' \
            'measurementId: "G-M832VZDGJC"' \
            '};' \
- \
            'firebase.initializeApp(firebaseConfig);' \
            'const messaging=firebase.messaging();' \
- \
            'messaging.setBackgroundMessageHandler(function (payload) {' \
            'console.log(payload);' \
            'const notification=JSON.parse(payload);' \
@@ -77,4 +73,4 @@ def showFirebaseJS(request):
            '};' \
            'return self.registration.showNotification(payload.notification.title,notificationOption);' \
            '});'
-    return HttpResponse(data,content_type="text/javascript")
+    return HttpResponse(data, content_type="text/javascript")

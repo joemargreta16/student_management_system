@@ -92,9 +92,7 @@ Staffs Notification
 <script>
     $(".show_notification").click(function(){
       var student_id=$(this).parents("tr").children("td:eq(0)").text();
-      var student_fname=$(this).parents("tr").children("td:eq(1)").text();
-      var student_lname=$(this).parents("tr").children("td:eq(2)").text();
-      var student_name = student_lname +(" , ") + student_fname
+      var student_name=$(this).parents("tr").children("td:eq(3)").text();
       console.log(student_id);
       $("#student_id").val(student_id);
       $("#name_span").text(student_name);
