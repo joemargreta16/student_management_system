@@ -55,14 +55,14 @@ def showFirebaseJS(request):
  \
  \
            'var firebaseConfig = {' \
-           'apiKey: "YOUR_API_KEY",' \
-           'authDomain: "YOUR_FIREBASE_DOMAIN_NAME",' \
-           'databaseURL: "YOUR_FIREBASE_DATBASE_URL",' \
-           'projectId: "YOUR_FIREBASE_PROJECT_ID",' \
-           'storageBucket: "YOUR_FIREBASE_STORAGE_BUCKET END WITH appspot.com",' \
-           'messagingSenderId: "YOUR SENDER ID",' \
-           'appId: "YOUR APP ID",' \
-           'measurementId: "YOUR MEASUREMENT ID"' \
+           'apiKey: "AIzaSyByJtFBZvXE1gv35I1qPctEnZ1oNI64QYE",' \
+           'authDomain: "student-management-syste-bdbe2.firebaseapp.com",' \
+           'databaseURL: "https://student-management-syste-bdbe2.firebaseio.com",' \
+           'projectId: "student-management-syste-bdbe2",' \
+           'storageBucket: "student-management-syste-bdbe2.appspot.com",' \
+           'messagingSenderId: "1031958236957",' \
+           'appId: "1:1031958236957:web:e5b07faf9473bc9707dbf4",' \
+           'measurementId: "G-M832VZDGJC"' \
            '};' \
  \
            'firebase.initializeApp(firebaseConfig);' \
