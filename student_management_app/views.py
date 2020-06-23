@@ -51,26 +51,27 @@ def logout_user(request):
 
 def showFirebaseJS(request):
     data = 'importScripts("https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js");' \
-           'importScripts("https://www.gstatic.com/firebasejs/7.14.6/firebase-messaging.js");' \
+           'importScripts("https://www.gstatic.com/firebasejs/7.14.6/firebase-messaging.js"); ' \
            'var firebaseConfig = {' \
-           'apiKey: "AIzaSyByJtFBZvXE1gv35I1qPctEnZ1oNI64QYE",' \
-           'authDomain: "student-management-syste-bdbe2.firebaseapp.com",' \
-           'databaseURL: "https://student-management-syste-bdbe2.firebaseio.com",' \
-           'projectId: "student-management-syste-bdbe2",' \
-           'storageBucket: "student-management-syste-bdbe2.appspot.com",' \
-           'messagingSenderId: "1031958236957",' \
-           'appId: "1:1031958236957:web:e5b07faf9473bc9707dbf4",' \
-           'measurementId: "G-M832VZDGJC"' \
-           '};' \
+           '        apiKey: "AIzaSyByJtFBZvXE1gv35I1qPctEnZ1oNI64QYE",' \
+           '        authDomain: "student-management-syste-bdbe2.firebaseapp.com",' \
+           '        databaseURL: "https://student-management-syste-bdbe2.firebaseio.com",' \
+           '        projectId: "student-management-syste-bdbe2",' \
+           '        storageBucket: "student-management-syste-bdbe2.appspot.com",' \
+           '        messagingSenderId: "1031958236957",' \
+           '        appId: "1:1031958236957:web:e5b07faf9473bc9707dbf4",' \
+           '        measurementId: "G-M832VZDGJC"' \
+           ' };' \
            'firebase.initializeApp(firebaseConfig);' \
            'const messaging=firebase.messaging();' \
            'messaging.setBackgroundMessageHandler(function (payload) {' \
-           'console.log(payload);' \
-           'const notification=JSON.parse(payload);' \
-           'const notificationOption={' \
-           'body:notification.body,' \
-           'icon:notification.icon' \
-           '};' \
-           'return self.registration.showNotification(payload.notification.title,notificationOption);' \
+           '    console.log(payload);' \
+           '    const notification=JSON.parse(payload);' \
+           '    const notificationOption={' \
+           '        body:notification.body,' \
+           '        icon:notification.icon' \
+           '    };' \
+           '    return self.registration.showNotification(payload.notification.title,notificationOption);' \
            '});'
+
     return HttpResponse(data, content_type="text/javascript")

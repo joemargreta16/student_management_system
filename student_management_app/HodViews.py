@@ -584,8 +584,8 @@ def send_student_notification(request):
         "notification": {
             "title": "Student Management System",
             "body": message,
-            "click_action": "https://student-mngmt-sys-by-jtgreta.herokuapp.com/student_all_notification",
-            "icon": "https://student-mngmt-sys-by-jtgreta.herokuapp.com/static/dist/img/avatar04.png"
+            "click_action":"https://mystudentmanagementsys.herokuapp.com/student_all_notification",
+            "icon":"https://mystudentmanagementsys.herokuapp.com/static/dist/img/avatar04.png"
         },
         "to": token
     }
@@ -609,8 +609,8 @@ def send_staff_notification(request):
         "notification": {
             "title": "Student Management System",
             "body": message,
-            "click_action":"https://student-mngmt-sys-by-jtgreta.herokuapp.com/staff_all_notification",
-            "icon":"https://student-mngmt-sys-by-jtgreta.herokuapp.com/static/dist/img/avatar04.png"
+            "click_action":"https://mystudentmanagementsys.herokuapp.com/staff_all_notification",
+            "icon":"https://mystudentmanagementsys.herokuapp.com/static/dist/img/avatar04.png"
         },
         "to": token
     }

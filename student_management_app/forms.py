@@ -21,9 +21,9 @@ class AddStudentForm(forms.Form):
     address = forms.CharField(label="Address", max_length=50, widget=forms.TextInput(attrs={"class": "form-control"}))
 
     course_list = []
-    courses = Courses.objects.all()
-    try:
 
+    try:
+        courses = Courses.objects.all()
         for course in courses:
             small_course = (course.id, course.course_name)
             course_list.append(small_course)
@@ -39,9 +39,9 @@ class AddStudentForm(forms.Form):
 
     # ito naman pah Online
     session_list = []
-    sessions = SessionYearModel.object.all()
-    try:
 
+    try:
+        sessions = SessionYearModel.object.all()
         for ses in sessions:
             small_ses = (ses.id, str(ses.session_start_year) + " -TO- " + str(ses.session_end_year))
             session_list.append(small_ses)
@@ -72,9 +72,9 @@ class EditStudentForm(forms.Form):
     address = forms.CharField(label="Address", max_length=50, widget=forms.TextInput(attrs={"class": "form-control"}))
 
     course_list = []
-    courses = Courses.objects.all()
-    try:
 
+    try:
+        courses = Courses.objects.all()
         for course in courses:
             small_course = (course.id, course.course_name)
             course_list.append(small_course)
@@ -82,8 +82,10 @@ class EditStudentForm(forms.Form):
         course_list = []
 
     session_list = []
-    sessions = SessionYearModel.object.all()
+
     try:
+        sessions = SessionYearModel.object.all()
+
         for ses in sessions:
             small_ses = (ses.id, str(ses.session_start_year) + " -TO- " + str(ses.session_end_year))
             session_list.append(small_ses)
