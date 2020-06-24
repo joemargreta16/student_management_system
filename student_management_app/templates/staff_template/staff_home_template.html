@@ -312,7 +312,6 @@ Home
   function sendToServer(token){
     $.ajax({
         url:'{% url 'staff_fcmtoken_save' %}',
-
         type:'POST',
         data:{token:token},
     })
@@ -325,6 +324,6 @@ Home
         }
     });
   }
-  IntitalizedFireBaseMessaging();
+  IntitalizeFireBaseMessaging();
 </script>
 {% endblock custom_js %}
