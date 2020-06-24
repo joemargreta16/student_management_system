@@ -1,5 +1,6 @@
 import json
 
+import requests
 from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
@@ -584,14 +585,14 @@ def send_student_notification(request):
         "notification": {
             "title": "Student Management System",
             "body": message,
-            "click_action":"https://mystudentmanagementsys.herokuapp.com/student_all_notification",
-            "icon":"https://mystudentmanagementsys.herokuapp.com/static/dist/img/avatar04.png"
+            "click_action": "https://mystudentmanagementsys.herokuapp.com/student_all_notification",
+            "icon": "https://mystudentmanagementsys.herokuapp.com/static/dist/img/avatar04.png"
         },
         "to": token
     }
     headers = {"Content-Type": "application/json",
                "Authorization": "key=AAAA8EWBDx0:APA91bHvbcLMl_Lp5ShEXssl-BfhZkA1ekFPNxH6c8xdTqwNR_w4qE2JJOiM2FYJtKUoaPXvbDKRN18GA3qYJudhlYU5p3lzRENOTDJ5Z_x-igixDfMwVoQd5_UnFjU2vnNrHDqP5Vb2"}
-    data = request.POST(url, data=json.dumps(body), headers=headers)
+    data = requests.post(url, data=json.dumps(body), headers=headers)
     notification = NotificationStudent(student_id=student, message=message)
     notification.save()
     print(data.text)
@@ -609,14 +610,14 @@ def send_staff_notification(request):
         "notification": {
             "title": "Student Management System",
             "body": message,
-            "click_action":"https://mystudentmanagementsys.herokuapp.com/staff_all_notification",
-            "icon":"https://mystudentmanagementsys.herokuapp.com/static/dist/img/avatar04.png"
+            "click_action": "https://mystudentmanagementsys.herokuapp.com/staff_all_notification",
+            "icon": "https://mystudentmanagementsys.herokuapp.com/static/dist/img/avatar04.png"
         },
         "to": token
     }
     headers = {"Content-Type": "application/json",
                "Authorization": "key=AAAA8EWBDx0:APA91bHvbcLMl_Lp5ShEXssl-BfhZkA1ekFPNxH6c8xdTqwNR_w4qE2JJOiM2FYJtKUoaPXvbDKRN18GA3qYJudhlYU5p3lzRENOTDJ5Z_x-igixDfMwVoQd5_UnFjU2vnNrHDqP5Vb2"}
-    data = request.POST(url, data=json.dumps(body), headers=headers)
+    data = requests.post(url, data=json.dumps(body), headers=headers)
     notification = NotificationStaffs(staff_id=staff, message=message)
     notification.save()
     print(data.text)
