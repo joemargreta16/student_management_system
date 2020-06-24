@@ -1,4 +1,6 @@
 import datetime
+import json
+import os
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -51,7 +53,7 @@ def logout_user(request):
 
 def showFirebaseJS(request):
     data = 'importScripts("https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js");' \
-           'importScripts("https://www.gstatic.com/firebasejs/7.15.4/firebase-messaging.js"); ' \
+           'importScripts("https://www.gstatic.com/firebasejs/7.15.4/firebase-messaging.js");' \
            'var firebaseConfig = {' \
            '        apiKey: "AIzaSyByJtFBZvXE1gv35I1qPctEnZ1oNI64QYE",' \
            '        authDomain: "student-management-syste-bdbe2.firebaseapp.com",' \
