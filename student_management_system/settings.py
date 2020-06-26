@@ -25,7 +25,7 @@ SECRET_KEY = '=xe921l()%oztmssxdl5$@&x8=bfx8+)d@9wt$5414225jafzo'
 DEBUG = True
 
 ALLOWED_HOSTS = ["mystudentmanagementsys.herokuapp.com"]
-# ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = []
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -135,17 +135,16 @@ AUTH_USER_MODEL = "student_management_app.CustomUser"
 AUTHENTICATION_BACKENDS = ['student_management_app.EmailBackEnd.EmailBackEnd']
 
 # comment ko lang muna to
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+# EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_mails")
 
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_mails")
-
-# EMAIL_HOST="smtp.gmail.com"
-# EMAIl_PORT=587
-# EMAIL_HOST_USER="joemar.greta16@gmail.com"
-# EMAIL_HOST_PASSWORD="strongpossum2020"
-# EMAIL_USE_TLS=True
-# DEFAULT_FROM_EMAIL="Student Management System <joemar.greta16@gmail.com>"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIl_PORT = 587
+EMAIL_HOST_USER = 'joemar.greta16@gmail.com'
+EMAIL_HOST_PASSWORD = 'jvcskrlucyjkakna'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Student Management System <joemar.greta16@gmail.com>'
 
 # Enable this area only if making the project live on HEROKU
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
