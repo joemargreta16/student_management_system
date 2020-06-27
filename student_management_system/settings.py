@@ -24,8 +24,8 @@ SECRET_KEY = '=xe921l()%oztmssxdl5$@&x8=bfx8+)d@9wt$5414225jafzo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ["mystudentmanagementsys.herokuapp.com"]
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["mystudentmanagementsys.herokuapp.com"]
+# ALLOWED_HOSTS = []
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -47,7 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     # Enable this area only if making the project live on HEROKU
-    # 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -83,15 +83,15 @@ WSGI_APPLICATION = 'student_management_system.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'student_management_system',
-        'USER': 'student_management_system',
-        'PASSWORD': 'student_management_password',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'student_management_system',
+        # 'USER': 'student_management_system',
+        # 'PASSWORD': 'student_management_password',
+        # 'HOST': 'localhost',
+        # 'PORT': '3306'
 
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
     }
 }
@@ -147,12 +147,12 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Student Management System <joemar.greta16@gmail.com>'
 
 # Enable this area only if making the project live on HEROKU
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# import dj_database_url
-# import django_heroku
-#
-# # Activate Django-Heroku.
-# django_heroku.settings(locals())
-#
-# prod_db = dj_database_url.config(conn_max_age=500)
-# DATABASES['default'].update(prod_db)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+import dj_database_url
+import django_heroku
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
+
+prod_db = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)
