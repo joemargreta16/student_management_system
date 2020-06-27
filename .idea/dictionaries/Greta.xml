@@ -7,6 +7,7 @@
       <w>elif</w>
       <w>endblock</w>
       <w>endfor</w>
+      <w>fcmtoken</w>
       <w>firebase</w>
       <w>gunicorn</w>
       <w>joemar</w>
