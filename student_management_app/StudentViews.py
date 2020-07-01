@@ -7,7 +7,7 @@ from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
 from student_management_app.models import Students, Courses, Subjects, CustomUser, Attendance, AttendanceReport, \
-    LeaveReportStudent, FeedBackStudents, NotificationStudent
+    LeaveReportStudent, FeedBackStudents, NotificationStudent, StudentResult
 
 
 def student_home(request):
@@ -168,3 +168,9 @@ def student_all_notification(request):
     student = Students.objects.get(admin=request.user.id)
     notifications = NotificationStudent.objects.filter(student_id=student.id)
     return render(request, "student_template/all_notification.html", {"notifications": notifications})
+
+
+def student_view_result(request):
+    student = Students.objects.get(admin=request.user.id)
+    student_result = StudentResult.objects.filter(student_id=student.id)
+    return render(request, "student_template/student_result.html", {"student_result": student_result})

@@ -8,7 +8,6 @@
   <title>Student Management System | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
- 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{% static "plugins/fontawesome-free/css/all.min.css" %}">
   <!-- Ionicons -->
@@ -23,13 +22,12 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Student</b> <br>Management System</a>
+    <a href="{% url 'show_login' %}"><b>Student</b> <br>Management System</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to Student Management System</p>
-
+      <p class="login-box-msg">Please Sign In To Continue</p>
       <form action="/dologin" method="POST">
         {% csrf_token %}
         <div class="input-group mb-3">
@@ -48,10 +46,14 @@
             </div>
           </div>
         </div>
+        <div class="input-group mb-3">
+          <div class="g-recaptcha" data-sitekey="6LdRyKsZAAAAAExvpVbc8N0hVm5MMw5als-ZzZDG"></div>
+        </div>
         <div class="row">
           <!-- /.col -->
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+<!--            <button type="submit" class="btn btn-primary btn-block">Sign In</button>-->
+            <button type="submit" class="btn btn-block btn-outline-primary btn-lg">Sign In</button>
           </div>
           <div class="col-12 text-center">
             <a href="{% url 'password_reset' %}">Reset Password</a>
@@ -74,13 +76,12 @@
   </div>
 </div>
 <!-- /.login-box -->
-
 <!-- jQuery -->
 <script src="{% static "plugins/jquery/jquery.min.js" %}"></script>
 <!-- Bootstrap 4 -->
 <script src="{% static "plugins/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
 <!-- AdminLTE App -->
 <script src="{% static "dist/js/adminlte.min.js" %}"></script>
-
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>

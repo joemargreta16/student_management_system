@@ -1,7 +1,7 @@
 {% load static %}
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar sidebar-light-olive elevation-4">
     <!-- Brand Logo -->
-  <a href="" class="brand-link">
+  <a href="{% url 'staff_home' %}" class="brand-link text-sm">
 <!--      <img src="{% static "dist/img/AdminLTELogo.png" %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"-->
 <!--           style="opacity: .8">-->
     <img src="{% static "dist/img/wall1.png" %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -24,7 +24,7 @@
 
       <!-- Sidebar Menu -->
     <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+      <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-compact text-sm" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
         <li class="nav-item">
@@ -40,7 +40,7 @@
         <li class="nav-item">
           {% url 'staff_take_attendance' as staff_take_attendance %}
           <a href="{{ staff_take_attendance }}" class="nav-link {% if request.path == staff_take_attendance %} active {% endif %}">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon far fa-calendar-alt"></i>
             <p>
               Take Attendance
             </p>
@@ -50,7 +50,7 @@
         <li class="nav-item">
           {% url 'staff_update_attendance' as staff_update_attendance %}
           <a href="{{ staff_update_attendance }}" class="nav-link {% if request.path == staff_update_attendance %} active {% endif %}">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon fas fa-table"></i>
             <p>
               View Update Attendance
             </p>
@@ -60,7 +60,7 @@
         <li class="nav-item">
           {% url 'staff_apply_leave' as staff_apply_leave %}
           <a href="{{ staff_apply_leave }}" class="nav-link {% if request.path == staff_apply_leave %} active {% endif %}">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon far fa-file-alt"></i>
             <p>
               Apply Leave
             </p>
@@ -70,7 +70,7 @@
         <li class="nav-item">
           {% url 'staff_feedback' as staff_feedback %}
           <a href="{{ staff_feedback }}" class="nav-link {% if request.path == staff_feedback %} active {% endif %}">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon fas fa-bullhorn"></i>
             <p>
               Feedback
             </p>
@@ -80,7 +80,7 @@
         <li class="nav-item">
           {% url 'staff_add_result' as staff_add_result %}
           <a href="{{ staff_add_result }}" class="nav-link {% if request.path == staff_add_result %} active {% endif %}">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon far fa-plus-square"></i>
             <p>
               Add Result
             </p>
@@ -88,9 +88,19 @@
         </li><!-- Add Result -->
 
         <li class="nav-item">
+          {% url 'edit_student_result' as edit_student_result %}
+          <a href="{{ edit_student_result }}" class="nav-link {% if request.path == edit_student_result %} active {% endif %}">
+            <i class="nav-icon fas fa-edit"></i>
+            <p>
+              Edit Result
+            </p>
+          </a>
+        </li><!-- Edit Result -->
+
+        <li class="nav-item">
           {% url 'staff_all_notification' as staff_all_notification %}
           <a href="{{ staff_all_notification }}" class="nav-link {% if request.path == staff_all_notification %} active {% endif %}">
-            <i class="nav-icon fas fa-th"></i>
+            <i class="nav-icon far fa-comments"></i>
             <p>
               Notifications
             </p>

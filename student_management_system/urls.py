@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from student_management_app import views, HodViews, StaffViews, StudentViews
+from student_management_app.EditResultViewClass import EditResultViewClass
 from student_management_system import settings
 
 urlpatterns = [
@@ -104,6 +105,8 @@ urlpatterns = [
                   path('staff_all_notification', StaffViews.staff_all_notification, name="staff_all_notification"),
                   path('staff_add_result', StaffViews.staff_add_result, name="staff_add_result"),
                   path('save_student_result', StaffViews.save_student_result, name="save_student_result"),
+                  path('edit_student_result', EditResultViewClass.as_view(), name="edit_student_result"),
+                  path('fetch_student_result', StaffViews.fetch_student_result, name="fetch_student_result"),
 
                   #     Student URL Path
                   path('student_home', StudentViews.student_home, name="student_home"),
@@ -120,7 +123,8 @@ urlpatterns = [
                   path('student_fcmtoken_save', StudentViews.student_fcmtoken_save, name="student_fcmtoken_save"),
                   path('firebase-messaging-sw.js', views.showFirebaseJS, name="show_firebase_js"),
                   path('student_all_notification', StudentViews.student_all_notification,
-                       name="student_all_notification")
+                       name="student_all_notification"),
+                  path('student_view_result', StudentViews.student_view_result, name="student_view_result")
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL,
                                                                                          document_root=settings.STATIC_ROOT)
